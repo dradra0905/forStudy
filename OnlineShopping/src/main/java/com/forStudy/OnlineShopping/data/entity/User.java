@@ -11,13 +11,13 @@ import java.util.Date;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long USER_KEY;
-    private String USER_ID;
-    private String PASSWORD;
-    private String NAME;
-    private String EMAIL;
-    private String PHONE_NUMBER;
-    private String ADDRESS;
-    private Date REG_DATE;
-    private String GRADE;
+    private Long userKey;
+    private String userId;
+    private String password;
+    private String name;
+    private String email;
+    private String phoneNumber;
+    private String address;
+    private Date regDate;
+    private String grade;
 }
