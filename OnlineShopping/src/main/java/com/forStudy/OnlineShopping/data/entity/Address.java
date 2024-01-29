@@ -5,21 +5,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Comment;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 public class Address extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Comment("주소ID")
     private Long addressId;
 
     @Column
+    @Comment("주소")
     private String address;
-
-    @Column
-    private String status;
 
     @ManyToOne
     @JoinColumn(name="userId")

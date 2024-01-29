@@ -1,11 +1,12 @@
 //package com.forStudy.OnlineShopping.data.entity;
 //
-//import jakarta.persistence.Column;
-//import jakarta.persistence.Entity;
-//import lombok.NoArgsConstructor;
+//import jakarta.persistence.*;
+//import lombok.Getter;
+//import lombok.Setter;
 //
 //@Entity
-//@NoArgsConstructor
+//@Getter
+//@Setter
 //public class Cart extends BaseEntity{
 //    @Column(nullable = false)
 //    private Integer amount;

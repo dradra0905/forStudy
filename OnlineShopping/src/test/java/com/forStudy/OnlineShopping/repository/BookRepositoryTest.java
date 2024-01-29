@@ -6,6 +6,9 @@ import com.forStudy.OnlineShopping.data.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,9 +34,9 @@ public class BookRepositoryTest {
     @Test
     public void testFindBook(){
         Book book = new Book();
-        book.setTitle("광마회귀");
-        book.setAuthor("이자하");
-        book.setPrice("10000");
+        book.setTitle("화산귀환");
+        book.setAuthor("청명");
+        book.setPrice("15000");
         bookRepository.save(book);
 
         Optional<Book> result = bookRepository.findById(1L);
@@ -43,5 +46,18 @@ public class BookRepositoryTest {
             Book book1 = result.get();
             System.out.println(book1);
         }
+    }
+    @Test
+    public void testPageDefault(){
+
+        Book book = new Book();
+        book.setTitle("나노마신");
+        book.setAuthor("천마");
+        book.setPrice("20000");
+        bookRepository.save(book);
+
+        Pageable pageable = PageRequest.of(0,10);
+        Page<Book> result = bookRepository.findAll(pageable);
+        System.out.println(result.getTotalPages());
     }
 }
