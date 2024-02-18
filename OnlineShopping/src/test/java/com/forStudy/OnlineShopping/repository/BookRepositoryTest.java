@@ -27,7 +27,7 @@ public class BookRepositoryTest {
     public void testBookSave(){
         Book book = new Book();
         book.setTitle("광마회귀");
-        book.setAuthor("이자하");
+        book.setAuthor("asd");
         book.setPrice("10000");
         bookRepository.save(book);
     }
